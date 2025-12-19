@@ -14,6 +14,7 @@ class Users extends Component
 {
     use WithFileUploads, WithPagination;
 
+    #[Url]
     public $search = '';
 
     #[validate('required|min:3')]

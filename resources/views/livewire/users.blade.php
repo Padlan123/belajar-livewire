@@ -52,7 +52,7 @@
                             @enderror
                         </div>
                         <div class="col-span-full">
-                            <label for="profil" class="block text-sm/6 font-medium text-white">Avatar</label>
+                            <label class="block text-sm/6 font-medium text-white">Avatar</label>
                             <div
                                 class="mt-2 flex justify-center rounded-lg border border-dashed border-white/25 px-6 py-10">
                                 <div class="text-center">
@@ -128,7 +128,7 @@
         <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
             <svg class="w-4 h-4 text-body" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/></svg>
         </div>
-        <input type="text" wire:model.live="search" id="search" class="block w-full p-3 ps-9  text-heading text-sm rounded-base shadow-xs" placeholder="Search" />
+        <input type="text" wire:model.live.debounce.500ms="search" id="search" class="block w-full p-3 ps-9  text-heading text-sm rounded-base shadow-xs" placeholder="Search" />
     </div>
         </div>
         <ul role="list" class="divide-y divide-white/5">
