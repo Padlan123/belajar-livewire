@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use Livewire\Attributes\Url;
 use Livewire\Attributes\Validate;
 use App\Models\User;
 use Livewire\Component;
@@ -11,11 +12,13 @@ use Livewire\WithPagination;
 
 class Users extends Component
 {
-    use WithFileUploads, WithPagination;    
+    use WithFileUploads, WithPagination;
+
+    public $search = '';
 
     #[validate('required|min:3')]
-    public $name = ''; 
-    
+    public $name = '';
+
     #[validate('required|email:dns|unique:users')]
     public $email = '';
 
@@ -42,7 +45,6 @@ class Users extends Component
         session()->flash('success', 'User berhasil ditambahkan');
     }
 
-        
     public function render()
     {
         return view('livewire.users', [
