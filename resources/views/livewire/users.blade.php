@@ -149,6 +149,6 @@
                 </li>
             @endforeach
         </ul>
-        {{ $users->links() }}
+            {{ $users->links() }}
     </div>
 </div>

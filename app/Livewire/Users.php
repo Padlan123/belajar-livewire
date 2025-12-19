@@ -15,7 +15,7 @@ class Users extends Component
     use WithFileUploads, WithPagination;
 
     #[Url]
-    public $search = '';
+    public ?string $search = '';
 
     #[validate('required|min:3')]
     public $name = '';
@@ -50,7 +50,7 @@ class Users extends Component
     {
         return view('livewire.users', [
             'title' => 'User page',
-            'users' => User::latest()->paginate(6)
+            'users' => User::where('name','LIKE','%'. $this->search . '%')->latest()->paginate(6)
         ]);
     }
 }
